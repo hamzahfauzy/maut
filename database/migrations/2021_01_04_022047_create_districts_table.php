@@ -17,8 +17,8 @@ class CreateDistrictsTable extends Migration
             $table->id();
             $table->foreignId('regency_id')->constrained()->onDelete('cascade');;
             $table->string('name');
-            $table->string('lat');
-            $table->string('long');
+            $table->string('lat')->nullable();
+            $table->string('long')->nullable();
         });
     }
 
