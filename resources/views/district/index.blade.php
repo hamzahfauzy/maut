@@ -76,7 +76,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $districts->links() !!}
+                {!! $districts->links('vendor.pagination.bootstrap-4') !!}
             </div>
         </div>
     </div>

@@ -76,7 +76,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $villages->links() !!}
+                {!! $villages->links('vendor.pagination.bootstrap-4') !!}
             </div>
         </div>
     </div>

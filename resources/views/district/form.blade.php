@@ -21,9 +21,16 @@
             {{ Form::text('long', $district->long, ['class' => 'form-control' . ($errors->has('long') ? ' is-invalid' : ''), 'placeholder' => 'Long']) }}
             {!! $errors->first('long', '<div class="invalid-feedback">:message</p>') !!}
         </div>
-
+        <div class="form-group">
+            <div id="map-canvas" style="height: 300px"></div>
+        </div>
     </div>
     <div class="box-footer mt20">
         <button type="submit" class="btn btn-primary">Submit</button>
     </div>
 </div>
+@section('adminlte_js')
+<script>
+initMap(event, {{$district->lat}}, {{$district->long}})
+</script>
+@endsection

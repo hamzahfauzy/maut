@@ -78,7 +78,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $media->links() !!}
+                {!! $media->links('vendor.pagination.bootstrap-4') !!}
             </div>
         </div>
     </div>

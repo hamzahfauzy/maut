@@ -74,7 +74,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $logs->links() !!}
+                {!! $logs->links('vendor.pagination.bootstrap-4') !!}
             </div>
         </div>
     </div>

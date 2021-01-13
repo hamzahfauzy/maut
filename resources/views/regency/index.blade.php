@@ -76,7 +76,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $regencies->links() !!}
+                {!! $regencies->links('vendor.pagination.bootstrap-4') !!}
             </div>
         </div>
     </div>

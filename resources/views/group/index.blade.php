@@ -76,7 +76,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $groups->links() !!}
+                {!! $groups->links('vendor.pagination.bootstrap-4') !!}
             </div>
         </div>
     </div>
