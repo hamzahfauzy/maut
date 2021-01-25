@@ -33,7 +33,7 @@
         </div>
         <div class="form-group">
             {{ Form::label('description') }}
-            {{ Form::text('description', $news->description, ['class' => 'form-control' . ($errors->has('description') ? ' is-invalid' : ''), 'placeholder' => 'Description']) }}
+            {{ Form::textarea('description', $news->description, ['class' => 'form-control' . ($errors->has('description') ? ' is-invalid' : ''), 'placeholder' => 'Description']) }}
             {!! $errors->first('description', '<div class="invalid-feedback">:message</p>') !!}
         </div>
         <div class="form-group">

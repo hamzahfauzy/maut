@@ -40,7 +40,7 @@
                                         
 										<th>Color</th>
 										<th>Name</th>
-										<th>Slug</th>
+										{{-- <th>Slug</th> --}}
 										<th>Status</th>
 
                                         <th></th>
@@ -53,7 +53,7 @@
                                             
 											<td>{{ $group->color }}</td>
 											<td>{{ $group->name }}</td>
-											<td>{{ $group->slug }}</td>
+											{{-- <td>{{ $group->slug }}</td> --}}
 											<td>{{ $group->status }}</td>
 
                                             <td>

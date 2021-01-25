@@ -30,6 +30,7 @@ class Medium extends Model
 		'status' => 'required',
     ];
 
+    public $timestamps = false;
     protected $perPage = 20;
 
     /**

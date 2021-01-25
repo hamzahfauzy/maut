@@ -27,15 +27,11 @@ use App\Http\Controllers\API\ProvinceController;
 Route::post('login', [UserController::class,'login']);
 
 Route::middleware('auth:api')->group(function() {
-    Route::get('details', [UserController::class,'details']);
-    
-    Route::resource('provinces', ProvinceController::class);
-    Route::resource('regencies', RegencyController::class);
-    Route::resource('districts', DistrictController::class);
-    Route::resource('villages', VillageController::class);
-    Route::resource('groups', GroupController::class);
-    Route::resource('categories', CategoryController::class);
-    Route::resource('media', MediumController::class);
-    Route::resource('logs', LogController::class);
-    Route::resource('news', NewsController::class);
+    Route::get('provinces', [ProvinceController::class,'index']);
+    Route::get('regencies', [RegencyController::class,'index']);
+    Route::get('districts', [DistrictController::class,'index']);
+    Route::get('villages', [VillageController::class,'index']);
+    Route::get('groups', [GroupController::class,'index']);
+    Route::get('categories', [CategoryController::class,'index']);
+    Route::get('news', [NewsController::class,'index']);
 });

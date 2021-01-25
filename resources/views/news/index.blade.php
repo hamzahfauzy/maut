@@ -37,44 +37,43 @@
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
-                                        
-										<th>Log Id</th>
+										{{-- <th>Log Id</th> --}}
 										<th>Category Id</th>
-										<th>Village Id</th>
+										{{-- <th>Village Id</th>
 										<th>District Id</th>
-										<th>Media Id</th>
+										<th>Media Id</th> --}}
 										<th>Title</th>
-										<th>Description</th>
+										{{-- <th>Description</th> --}}
 										<th>Location</th>
-										<th>Origin Url</th>
+										{{-- <th>Origin Url</th>
 										<th>Event Date</th>
 										<th>Lat</th>
 										<th>Long</th>
 										<th>Created By</th>
-										<th>Updated By</th>
+										<th>Updated By</th> --}}
 
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @forelse ($news as $news)
+                                    @forelse ($all_news as $news)
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $news->log_id }}</td>
+											{{-- <td>{{ $news->log_id }}</td> --}}
 											<td>{{ $news->category_id }}</td>
-											<td>{{ $news->village_id }}</td>
+											{{-- <td>{{ $news->village_id }}</td>
 											<td>{{ $news->district_id }}</td>
-											<td>{{ $news->media_id }}</td>
+											<td>{{ $news->media_id }}</td> --}}
 											<td>{{ $news->title }}</td>
-											<td>{{ $news->description }}</td>
+											{{-- <td>{{ $news->description }}</td> --}}
 											<td>{{ $news->location }}</td>
-											<td>{{ $news->origin_url }}</td>
+											{{-- <td>{{ $news->origin_url }}</td>
 											<td>{{ $news->event_date }}</td>
 											<td>{{ $news->lat }}</td>
 											<td>{{ $news->long }}</td>
 											<td>{{ $news->created_by }}</td>
-											<td>{{ $news->updated_by }}</td>
+											<td>{{ $news->updated_by }}</td> --}}
 
                                             <td>
                                                 <form action="{{ route('news.destroy',$news->id) }}" method="POST" onsubmit="if(confirm('Are you sure to delete this item ?')){return true}else{return false}">
@@ -96,7 +95,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $news->links('vendor.pagination.bootstrap-4') !!}
+                {!! $all_news->links('vendor.pagination.bootstrap-4') !!}
             </div>
         </div>
     </div>

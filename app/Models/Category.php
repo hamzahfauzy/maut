@@ -24,8 +24,6 @@ class Category extends Model
     static $rules = [
 		'group_id' => 'required',
 		'name' => 'required',
-		'lat' => 'required',
-		'long' => 'required',
     ];
 
     protected $perPage = 20;
@@ -53,6 +51,4 @@ class Category extends Model
     {
         return $this->hasMany('App\Models\News', 'category_id', 'id');
     }
-    
-
 }

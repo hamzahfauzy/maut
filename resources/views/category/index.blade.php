@@ -36,26 +36,18 @@
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
-                                        <th>No</th>
-                                        
-										<th>Group Id</th>
+                                        <th>ID</th>
+										<th>Group</th>
 										<th>Name</th>
-										<th>Lat</th>
-										<th>Long</th>
-
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @forelse ($categories as $category)
                                         <tr>
-                                            <td>{{ ++$i }}</td>
-                                            
+                                            <td>{{ $category->id }}</td>
 											<td>{{ $category->group_id }}</td>
 											<td>{{ $category->name }}</td>
-											<td>{{ $category->lat }}</td>
-											<td>{{ $category->long }}</td>
-
                                             <td>
                                                 <form action="{{ route('categories.destroy',$category->id) }}" method="POST" onsubmit="if(confirm('Are you sure to delete this item ?')){return true}else{return false}">
                                                     <a class="btn btn-sm btn-primary " href="{{ route('categories.show',$category->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>

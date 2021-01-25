@@ -11,16 +11,6 @@
             {{ Form::text('name', $category->name, ['class' => 'form-control' . ($errors->has('name') ? ' is-invalid' : ''), 'placeholder' => 'Name']) }}
             {!! $errors->first('name', '<div class="invalid-feedback">:message</p>') !!}
         </div>
-        <div class="form-group">
-            {{ Form::label('lat') }}
-            {{ Form::text('lat', $category->lat, ['class' => 'form-control' . ($errors->has('lat') ? ' is-invalid' : ''), 'placeholder' => 'Lat']) }}
-            {!! $errors->first('lat', '<div class="invalid-feedback">:message</p>') !!}
-        </div>
-        <div class="form-group">
-            {{ Form::label('long') }}
-            {{ Form::text('long', $category->long, ['class' => 'form-control' . ($errors->has('long') ? ' is-invalid' : ''), 'placeholder' => 'Long']) }}
-            {!! $errors->first('long', '<div class="invalid-feedback">:message</p>') !!}
-        </div>
 
     </div>
     <div class="box-footer mt20">

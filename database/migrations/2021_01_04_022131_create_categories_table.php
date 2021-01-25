@@ -17,8 +17,7 @@ class CreateCategoriesTable extends Migration
             $table->id();
             $table->foreignId('group_id')->constrained()->onDelete('cascade');;
             $table->string('name');
-            $table->string('lat');
-            $table->string('long');
+            
         });
     }
 

@@ -18,10 +18,9 @@ class NewsController extends Controller
      */
     public function index()
     {
-        $news = News::paginate();
-
-        return view('news.index', compact('news'))
-            ->with('i', (request()->input('page', 1) - 1) * $news->perPage());
+        $all_news = News::paginate();
+        return view('news.index', compact('all_news'))
+            ->with('i', (request()->input('page', 1) - 1) * $all_news->perPage());
     }
 
     /**

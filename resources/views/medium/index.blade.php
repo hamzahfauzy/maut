@@ -37,9 +37,8 @@
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
-                                        
 										<th>Name</th>
-										<th>Url</th>
+										{{-- <th>Url</th> --}}
 										<th>Scrap Url</th>
 										<th>Keywords</th>
 										<th>Status</th>
@@ -53,7 +52,7 @@
                                             <td>{{ ++$i }}</td>
                                             
 											<td>{{ $medium->name }}</td>
-											<td>{{ $medium->url }}</td>
+											{{-- <td>{{ $medium->url }}</td> --}}
 											<td>{{ $medium->scrap_url }}</td>
 											<td>{{ $medium->keywords }}</td>
 											<td>{{ $medium->status }}</td>
