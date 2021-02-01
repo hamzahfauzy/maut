@@ -37,6 +37,8 @@ class Regency extends Model
      */
     protected $fillable = ['province_id','name','lat','long'];
 
+    public $timestamps = false;
+
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

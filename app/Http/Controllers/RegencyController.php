@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Regency;
+use App\Models\Province;
 use Illuminate\Http\Request;
 
 /**
@@ -11,6 +12,15 @@ use Illuminate\Http\Request;
  */
 class RegencyController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->province = new Province;
+        $this->province_map = [];
+        $provinces = $this->province->get();
+        foreach($provinces as $province)
+            $this->province_map[$province->id] = $province->name;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -32,7 +42,8 @@ class RegencyController extends Controller
     public function create()
     {
         $regency = new Regency();
-        return view('regency.create', compact('regency'));
+        $provinces = $this->province_map;
+        return view('regency.create', compact('regency','provinces'));
     }
 
     /**
@@ -73,8 +84,9 @@ class RegencyController extends Controller
     public function edit($id)
     {
         $regency = Regency::find($id);
+        $provinces = $this->province_map;
 
-        return view('regency.edit', compact('regency'));
+        return view('regency.edit', compact('regency','provinces'));
     }
 
     /**

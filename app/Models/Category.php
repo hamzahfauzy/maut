@@ -20,6 +20,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Category extends Model
 {
+    public $timestamps = false;
     
     static $rules = [
 		'group_id' => 'required',

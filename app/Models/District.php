@@ -21,6 +21,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class District extends Model
 {
+    public $timestamps = false;
     
     static $rules = [
 		'regency_id' => 'required',

@@ -12,6 +12,10 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
-    .postCss('resources/css/app.css', 'public/css', [
-        //
-    ]);
+    .sass('resources/scss/app.scss', 'public/css')
+    .copy('node_modules/tinymce/skins', 'public/js/skins')
+    .copy('node_modules/tinymce/icons', 'public/js/icons')
+    ;
+    // .postCss('resources/css/app.css', 'public/css', [
+    //     //
+    // ]);

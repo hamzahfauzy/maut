@@ -38,7 +38,7 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Regency Id</th>
+										<th>Regency</th>
 										<th>Name</th>
 										<th>Lat</th>
 										<th>Long</th>
@@ -51,7 +51,7 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $district->regency_id }}</td>
+											<td>{{ $district->regency->name.' - '.$district->regency->province->name }}</td>
 											<td>{{ $district->name }}</td>
 											<td>{{ $district->lat }}</td>
 											<td>{{ $district->long }}</td>

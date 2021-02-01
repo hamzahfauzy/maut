@@ -2,8 +2,8 @@
     <div class="box-body">
         
         <div class="form-group">
-            {{ Form::label('province_id') }}
-            {{ Form::text('province_id', $regency->province_id, ['class' => 'form-control' . ($errors->has('province_id') ? ' is-invalid' : ''), 'placeholder' => 'Province Id']) }}
+            {{ Form::label('Province') }}
+            {{ Form::select('province_id', $provinces, $regency->province_id, ['class'=>'form-control '. ($errors->has('province_id') ? ' is-invalid' : '')]) }}
             {!! $errors->first('province_id', '<div class="invalid-feedback">:message</p>') !!}
         </div>
         <div class="form-group">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\News;
 use Illuminate\Http\Request;
+use App\DataTables\NewsDataTable;
 
 /**
  * Class NewsController
@@ -16,12 +17,16 @@ class NewsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(NewsDataTable $dataTable)
     {
-        $all_news = News::paginate();
-        return view('news.index', compact('all_news'))
-            ->with('i', (request()->input('page', 1) - 1) * $all_news->perPage());
+        return $dataTable->render('news.index');
     }
+    // public function index()
+    // {
+    //     $all_news = News::paginate();
+    //     return view('news.index', compact('all_news'))
+    //         ->with('i', (request()->input('page', 1) - 1) * $all_news->perPage());
+    // }
 
     /**
      * Show the form for creating a new resource.

@@ -32,8 +32,8 @@
 
         <link rel="stylesheet" href="{{ asset('vendor/adminlte/dist/css/adminlte.min.css') }}">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     @else
-        <link rel="stylesheet" href="{{ mix(config('adminlte.laravel_mix_css_path', 'css/app.css')) }}">
     @endif
 
     {{-- Livewire Styles --}}
@@ -88,6 +88,7 @@
         @include('adminlte::plugins', ['type' => 'js'])
 
         <script src="{{ asset('vendor/adminlte/dist/js/adminlte.min.js') }}"></script>
+        <script src="{{ asset('js/app.js') }}"></script>
     @else
         <script src="{{ mix(config('adminlte.laravel_mix_js_path', 'js/app.js')) }}"></script>
     @endif
@@ -102,6 +103,7 @@
     @endif
 
     {{-- Custom Scripts --}}
+    <script src="{{ asset('vendor/datatables/buttons.server-side.js') }}"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfDTwbgh1d1FDEWJwizePMcfOOYBvRW-w"></script>
     <script>
         var map = null;

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\District;
+use App\Models\Province;
 use Illuminate\Http\Request;
 
 /**
@@ -11,6 +12,16 @@ use Illuminate\Http\Request;
  */
 class DistrictController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->province = new Province;
+        $this->province_map = [];
+        $provinces = $this->province->get();
+        foreach($provinces as $province)
+            $this->province_map[$province->id] = $province->name;
+        $this->provinces = $this->province->with('regencies')->get();
+    }
     /**
      * Display a listing of the resource.
      *
@@ -32,7 +43,9 @@ class DistrictController extends Controller
     public function create()
     {
         $district = new District();
-        return view('district.create', compact('district'));
+        $provinces = $this->province_map;
+        $regencies = $this->provinces;
+        return view('district.create', compact('district','provinces','regencies'));
     }
 
     /**
@@ -73,8 +86,9 @@ class DistrictController extends Controller
     public function edit($id)
     {
         $district = District::find($id);
-
-        return view('district.edit', compact('district'));
+        $regencies = $this->provinces;
+        $provinces = $this->province_map;
+        return view('district.edit', compact('district','provinces','regencies'));
     }
 
     /**

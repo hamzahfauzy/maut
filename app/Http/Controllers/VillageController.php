@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Village;
+use App\Models\Province;
 use Illuminate\Http\Request;
 
 /**
@@ -11,6 +12,16 @@ use Illuminate\Http\Request;
  */
 class VillageController extends Controller
 {
+
+    function __construct()
+    {
+        $this->province = new Province;
+        $this->province_map = [];
+        $provinces = $this->province->get();
+        foreach($provinces as $province)
+            $this->province_map[$province->id] = $province->name;
+        $this->provinces = $this->province->with('regencies','regencies')->get();
+    }
     /**
      * Display a listing of the resource.
      *
@@ -32,7 +43,9 @@ class VillageController extends Controller
     public function create()
     {
         $village = new Village();
-        return view('village.create', compact('village'));
+        $provinces = $this->province_map;
+        $regencies = $this->provinces;
+        return view('village.create', compact('village','provinces','regencies'));
     }
 
     /**
@@ -73,8 +86,9 @@ class VillageController extends Controller
     public function edit($id)
     {
         $village = Village::find($id);
-
-        return view('village.edit', compact('village'));
+        $provinces = $this->province_map;
+        $regencies = $this->provinces;
+        return view('village.edit', compact('village','provinces','regencies'));
     }
 
     /**

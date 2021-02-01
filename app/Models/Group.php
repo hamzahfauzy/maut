@@ -19,13 +19,14 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Group extends Model
 {
+  public $timestamps = false;
     
-    static $rules = [
+  static $rules = [
 		'color' => 'required',
 		'name' => 'required',
 		'slug' => 'required',
 		'status' => 'required',
-    ];
+  ];
 
     protected $perPage = 20;
 
