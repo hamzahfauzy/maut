@@ -1,15 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LogController;
-use App\Http\Controllers\NewsController;
-use App\Http\Controllers\GroupController;
-use App\Http\Controllers\MediumController;
-use App\Http\Controllers\RegencyController;
-use App\Http\Controllers\VillageController;
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\DistrictController;
-use App\Http\Controllers\ProvinceController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CriteriaController;
+use App\Http\Controllers\ValuationController;
+use App\Http\Controllers\AlternatifController;
+use App\Http\Controllers\SubcriteriaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,20 +19,14 @@ use App\Http\Controllers\ProvinceController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('login');
 });
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
-
-Route::resource('provinces', ProvinceController::class);
-Route::resource('regencies', RegencyController::class);
-Route::resource('districts', DistrictController::class);
-Route::resource('villages', VillageController::class);
-Route::resource('groups', GroupController::class);
-Route::resource('categories', CategoryController::class);
-Route::resource('media', MediumController::class);
-Route::resource('logs', LogController::class);
-Route::resource('news', NewsController::class);
+Route::get('home',[HomeController::class,'index'])->name('home');
+Route::resource('criterias', CriteriaController::class);
+Route::resource('subcriterias', SubcriteriaController::class);
+Route::resource('alternatifs', AlternatifController::class);
+Route::get('valuations/results',[ValuationController::class,'results']);
+Route::resource('valuations', ValuationController::class);

@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'logo' => '<b>Portal</b>News',
+    'logo' => '<b>MA</b>UT',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -234,62 +234,27 @@ return [
             'url'         => '/home',
             'icon'        => 'fas fa-fw fa-home',
         ],
-        ['header' => 'account_settings'],
+        ['header' => 'Administrator Menu'],
         [
-            'text' => 'Provinces',
-            'url'  => '/provinces',
-            'icon' => 'fas fa-fw fa-user',
+            'text' => 'Kriteria',
+            'url'  => '/criterias',
+            'icon' => 'fas fa-fw fa-circle',
         ],
         [
-            'text' => 'Regencies',
-            'url'  => '/regencies',
-            'icon' => 'fas fa-fw fa-user',
+            'text' => 'Sub Kriteria',
+            'url'  => '/subcriterias',
+            'icon' => 'fas fa-fw fa-circle',
         ],
         [
-            'text' => 'Districts',
-            'url'  => '/districts',
-            'icon' => 'fas fa-fw fa-user',
+            'text' => 'Alternatif',
+            'url'  => '/alternatifs',
+            'icon' => 'fas fa-fw fa-circle',
         ],
         [
-            'text' => 'Villages',
-            'url'  => '/villages',
-            'icon' => 'fas fa-fw fa-user',
+            'text' => 'Hasil',
+            'url'  => '/valuations/results',
+            'icon' => 'fas fa-fw fa-circle',
         ],
-        [
-            'text' => 'Groups',
-            'url'  => '/groups',
-            'icon' => 'fas fa-fw fa-user',
-        ],
-        [
-            'text' => 'Categories',
-            'url'  => '/categories',
-            'icon' => 'fas fa-fw fa-user',
-        ],
-        [
-            'text' => 'Media',
-            'url'  => '/media',
-            'icon' => 'fas fa-fw fa-user',
-        ],
-        [
-            'text' => 'Logs',
-            'url'  => '/logs',
-            'icon' => 'fas fa-fw fa-user',
-        ],
-        [
-            'text' => 'News',
-            'url'  => '/news',
-            'icon' => 'fas fa-fw fa-user',
-        ],
-        [
-            'text' => 'profile',
-            'url'  => '/profile',
-            'icon' => 'fas fa-fw fa-user',
-        ],
-        // [
-        //     'text' => 'change_password',
-        //     'url'  => 'admin/settings',
-        //     'icon' => 'fas fa-fw fa-lock',
-        // ],
     ],
 
     /*
