@@ -78,7 +78,7 @@
                                         @php($min=[])
                                         @foreach($criterias as $k => $criteria)
                                         @php($max[$k]=0)
-                                        @php($min[$k]=0)
+                                        @php($min[$k]=1000)
                                         <th>{{$criteria->name}}</th>
                                         @endforeach
                                     </tr>
