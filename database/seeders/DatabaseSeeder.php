@@ -16,16 +16,19 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         User::truncate();
+
         User::create([
-            'name'   => 'Bot Scrapper',
-            'email'  => 'bot@scrapper.com',
+            'name'   => 'Super Admin',
+            'email'  => 'super@admin.com',
             'password' => bcrypt('password'),
+            'level' => 'Super Admin',
         ]);
 
         User::create([
             'name'   => 'Administrator',
             'email'  => 'admin@admin.com',
             'password' => bcrypt('password'),
+            'level' => 'Admin',
         ]);
     }
 }

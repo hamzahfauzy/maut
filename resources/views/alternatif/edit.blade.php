@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Alternatif')
+@section('title', 'Pegawai')
 
 @section('content_header')
-    Edit Alternatif
+    Edit Pegawai
 @endsection
 
 @section('content')
@@ -15,7 +15,7 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Edit Alternatif</span>
+                        <span class="card-title">Edit Pegawai</span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('alternatifs.update', $alternatif->id) }}"  role="form" enctype="multipart/form-data">

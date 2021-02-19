@@ -1,3 +1,3 @@
 <footer class="main-footer">
-    @yield('footer')
+    Copyright &copy; 2021 . MAUT . LABURA
 </footer>

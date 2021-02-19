@@ -19,9 +19,11 @@
                             </span>
 
                              <div class="float-right">
+                                @if(auth()->user()->level == 'Super Admin')
                                 <a href="{{ route('subcriterias.create',['criteria'=>$criteria]) }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Buat Baru') }}
                                 </a>
+                                @endif
                               </div>
                         </div>
                     </div>
@@ -64,6 +66,7 @@
 											<td>{{ $subcriteria->weighted }}</td>
 
                                             <td>
+                                                @if(auth()->user()->level == 'Super Admin')
                                                 <form action="{{ route('subcriterias.destroy',$subcriteria->id) }}" method="POST" onsubmit="if(confirm('Are you sure to delete this item ?')){return true}else{return false}">
                                                     <a class="btn btn-sm btn-primary " href="{{ route('subcriterias.show',$subcriteria->id) }}"><i class="fa fa-fw fa-eye"></i> Tampil</a>
                                                     <a class="btn btn-sm btn-success" href="{{ route('subcriterias.edit',$subcriteria->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
@@ -71,6 +74,7 @@
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Hapus</button>
                                                 </form>
+                                                @endif
                                             </td>
                                         </tr>
                                     @empty

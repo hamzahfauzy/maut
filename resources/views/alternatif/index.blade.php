@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Alternatif')
+@section('title', 'Pegawai')
 
 @section('content_header')
-    Alternatif
+    Pegawai
 @endsection
 
 @section('content')
@@ -15,13 +15,15 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Alternatif') }}
+                                {{ __('Pegawai') }}
                             </span>
 
                              <div class="float-right">
+                                @if(auth()->user()->level == 'Super Admin')
                                 <a href="{{ route('alternatifs.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Buat Baru') }}
                                 </a>
+                                @endif
                               </div>
                         </div>
                     </div>
@@ -38,7 +40,12 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Alternatif</th>
+										<th>Nama</th>
+										<th>Nik</th>
+										<th>Tempat Lahir</th>
+										<th>Tanggal Lahir</th>
+										<th>Pendidikan Terakhir</th>
+										<th>Alamat</th>
 
                                         <th></th>
                                     </tr>
@@ -49,20 +56,27 @@
                                             <td>{{ ++$i }}</td>
                                             
 											<td>{{ $alternatif->name }}</td>
+											<td>{{ $alternatif->NIK }}</td>
+											<td>{{ $alternatif->tempat_lahir }}</td>
+											<td>{{ $alternatif->tanggal_lahir }}</td>
+											<td>{{ $alternatif->pendidikan_terakhir }}</td>
+											<td>{{ $alternatif->alamat }}</td>
 
                                             <td>
+                                                @if(auth()->user()->level=='Super Admin')
                                                 <form action="{{ route('alternatifs.destroy',$alternatif->id) }}" method="POST" onsubmit="if(confirm('Are you sure to delete this item ?')){return true}else{return false}">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('valuations.index',['alternatif'=>$alternatif->id]) }}"><i class="fa fa-fw fa-eye"></i> Tampil</a>
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('alternatifs.show',$alternatif->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
                                                     <a class="btn btn-sm btn-success" href="{{ route('alternatifs.edit',$alternatif->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Hapus</button>
+                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
                                                 </form>
+                                                @endif
                                             </td>
                                         </tr>
                                     @empty
                                         <tr>
-                                            <td colspan="3"><i>Data empty!</i></td>
+                                            <td colspan="8"><i>Data empty!</i></td>
                                         </tr>
                                     @endforelse
                                 </tbody>

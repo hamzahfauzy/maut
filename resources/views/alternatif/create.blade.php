@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Alternatif')
+@section('title', 'Pegawai')
 
 @section('content_header')
-    Buat Alternatif
+    Buat Pegawai
 @endsection
 
 @section('content')
@@ -15,7 +15,7 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Buat Alternatif</span>
+                        <span class="card-title">Buat Pegawai</span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('alternatifs.store') }}"  role="form" enctype="multipart/form-data">
