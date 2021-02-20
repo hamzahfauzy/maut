@@ -19,11 +19,9 @@
                             </span>
 
                              <div class="float-right">
-                                @if(auth()->user()->level == 'Super Admin')
                                 <a href="{{ route('subcriterias.create',['criteria'=>$criteria]) }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Buat Baru') }}
                                 </a>
-                                @endif
                               </div>
                         </div>
                     </div>

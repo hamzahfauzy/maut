@@ -19,11 +19,9 @@
                             </span>
 
                              <div class="float-right">
-                                @if(auth()->user()->level == 'Super Admin')
                                 <a href="{{ route('alternatifs.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Buat Baru') }}
                                 </a>
-                                @endif
                               </div>
                         </div>
                     </div>
@@ -63,9 +61,9 @@
 											<td>{{ $alternatif->alamat }}</td>
 
                                             <td>
+                                                <a class="btn btn-sm btn-primary " href="{{ route('alternatifs.show',$alternatif->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
                                                 @if(auth()->user()->level=='Super Admin')
                                                 <form action="{{ route('alternatifs.destroy',$alternatif->id) }}" method="POST" onsubmit="if(confirm('Are you sure to delete this item ?')){return true}else{return false}">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('alternatifs.show',$alternatif->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
                                                     <a class="btn btn-sm btn-success" href="{{ route('alternatifs.edit',$alternatif->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
                                                     @csrf
                                                     @method('DELETE')

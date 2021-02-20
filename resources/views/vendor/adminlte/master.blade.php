@@ -104,63 +104,6 @@
 
     {{-- Custom Scripts --}}
     <script src="{{ asset('vendor/datatables/buttons.server-side.js') }}"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfDTwbgh1d1FDEWJwizePMcfOOYBvRW-w"></script>
-    <script>
-        var map = null;
-        var marker;
-
-        function showlocation() {
-        if ("geolocation" in navigator) {
-            /* geolocation is available */
-            // One-shot position request.
-            navigator.geolocation.getCurrentPosition(callback, error);
-        } else {
-            /* geolocation IS NOT available */
-            console.warn("geolocation IS NOT available");
-        }
-        }
-
-        function error(err) {
-            console.warn('ERROR(' + err.code + '): ' + err.message);
-        };
-
-        function callback(event) {
-
-            var lat = event.latLng.lat();
-            var lon = event.latLng.lng();
-            document.querySelector('input[name=lat]').value = lat;
-            document.querySelector('input[name=long]').value = lon;
-            var latLong = new google.maps.LatLng(lat, lon);
-            map.setZoom(8);
-            map.setCenter(latLong);
-        }
-        google.maps.event.addDomListener(window, 'load', initMap);
-
-
-
-        function initMap(event, lat = 0, lng = 0) {
-            // console.log(lat, lng)
-            var mapOptions = {
-                center: new google.maps.LatLng(lat, lng),
-                zoom: 8,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-            };
-            map = new google.maps.Map(document.getElementById("map-canvas"),
-                mapOptions);
-
-            var marker = new google.maps.Marker({
-                position: new google.maps.LatLng(lat, lng),
-                map: map,
-                draggable:true,
-            });
-
-            marker.addListener('dragend', callback);
-            // google.maps.event.addListener(map, 'center_changed', function() {
-            //     document.getElementById('default_latitude').value = map.getCenter().lat();
-            //     document.getElementById('default_longitude').value = map.getCenter().lng();
-            // });
-        }
-    </script>
     @yield('adminlte_js')
 </body>
 
