@@ -24,6 +24,14 @@ class AlternatifController extends Controller
             ->with('i', (request()->input('page', 1) - 1) * $alternatifs->perPage());
     }
 
+    public function data()
+    {
+        $alternatifs = Alternatif::paginate();
+
+        return view('alternatif.alternatif', compact('alternatifs'))
+            ->with('i', (request()->input('page', 1) - 1) * $alternatifs->perPage());
+    }
+
     /**
      * Show the form for creating a new resource.
      *

@@ -1,4 +1,5 @@
 <div class="box box-info padding-1">
+    <input type="hidden" name="tahun" value="{{$tahun}}">
     <div class="box-body">
         @foreach($criterias as $key => $criteria)
         <div class="form-group">

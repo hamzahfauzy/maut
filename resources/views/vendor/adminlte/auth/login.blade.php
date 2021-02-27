@@ -74,3 +74,9 @@
 
     </form>
 @stop
+
+@section('auth_footer')
+<center>
+    Sistem Kepegawaian Kontrak <br> Kab. Labuhanbatu Utara
+</center>
+@stop

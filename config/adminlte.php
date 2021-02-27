@@ -246,6 +246,11 @@ return [
             'icon' => 'fas fa-fw fa-circle',
         ],
         [
+            'text' => 'Alternatif',
+            'url'  => '/alternatifs/data',
+            'icon' => 'fas fa-fw fa-circle',
+        ],
+        [
             'text' => 'Pegawai',
             'url'  => '/alternatifs',
             'icon' => 'fas fa-fw fa-circle',

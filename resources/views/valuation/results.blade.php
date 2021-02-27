@@ -10,6 +10,21 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12">
+                <form action="" name="formFilter">
+                    <label for="">Tahun</label>
+                    <select name="tahun" id="tahun" class="form-control" onchange="formFilter.submit()" required>
+                        <option value="">Pilih Tahun</option>
+                        <option {{$tahun==2021?'selected=""':''}}>2021</option>
+                        <option {{$tahun==2020?'selected=""':''}}>2020</option>
+                        <option {{$tahun==2019?'selected=""':''}}>2019</option>
+                        <option {{$tahun==2018?'selected=""':''}}>2018</option>
+                        <option {{$tahun==2017?'selected=""':''}}>2017</option>
+                    </select>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
@@ -44,7 +59,7 @@
                                         </tr>
                                     @empty
                                         <tr>
-                                            <td colspan="3"><i>Data empty!</i></td>
+                                            <td colspan="{{count($criterias)+2}}"><i>Data empty!</i></td>
                                         </tr>
                                     @endforelse
                                 </tbody>
@@ -55,6 +70,7 @@
             </div>
         </div>
 
+        @if(count($alternatifs)>1)
         <div class="row">
             <div class="col-sm-12">
                 <div class="card">
@@ -213,5 +229,6 @@
                 </div>
             </div>
         </div>
+        @endif
     </div>
 @endsection

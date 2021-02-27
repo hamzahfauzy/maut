@@ -27,6 +27,7 @@ Auth::routes();
 Route::get('home',[HomeController::class,'index'])->name('home');
 Route::resource('criterias', CriteriaController::class);
 Route::resource('subcriterias', SubcriteriaController::class);
+Route::get('alternatifs/data', [AlternatifController::class,'data']);
 Route::resource('alternatifs', AlternatifController::class);
 Route::get('valuations/results',[ValuationController::class,'results']);
 Route::resource('valuations', ValuationController::class);

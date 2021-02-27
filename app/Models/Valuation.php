@@ -36,7 +36,7 @@ class Valuation extends Model
      *
      * @var array
      */
-    protected $fillable = ['criteria_id','subcriteria_id','alternatif_id'];
+    protected $fillable = ['criteria_id','subcriteria_id','alternatif_id','tahun'];
 
 
     /**
