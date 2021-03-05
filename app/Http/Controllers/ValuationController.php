@@ -106,8 +106,11 @@ class ValuationController extends Controller
         $req = request()->validate(Valuation::$rules);
         foreach($req['subcriteria_id'] as $criteria_id => $sub_id)
         {
-            $valuation = Valuation::where('alternatif_id',$req['alternatif_id'])->where('criteria_id',$criteria_id)->where('tahun',$request->tahun)->firstOrFail();
-            $valuation->update(['subcriteria_id'=>$sub_id]);
+            $valuation = Valuation::where('alternatif_id',$req['alternatif_id'])->where('criteria_id',$criteria_id)->where('tahun',$request->tahun);
+            if($valuation->exists())
+                $valuation->first()->update(['subcriteria_id'=>$sub_id]);
+            else
+                Valuation::create(['alternatif_id'=>$req['alternatif_id'],'criteria_id'=>$criteria_id,'subcriteria_id'=>$sub_id,'tahun'=>$request->tahun]);
         }
 
         return redirect()->route('valuations.index',['alternatif'=>$req['alternatif_id'],'tahun'=>$request->tahun])
