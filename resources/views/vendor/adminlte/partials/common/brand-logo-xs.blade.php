@@ -22,7 +22,7 @@
          style="opacity:.8">
 
     {{-- Brand text --}}
-    <span class="brand-text font-weight-light {{ config('adminlte.classes_brand_text') }}">
+    <span class="brand-text font-weight-light {{ config('adminlte.classes_brand_text') }}" style="font-size:15px">
         {!! config('adminlte.logo', '<b>Portal</b>BERITA') !!}
     </span>
 

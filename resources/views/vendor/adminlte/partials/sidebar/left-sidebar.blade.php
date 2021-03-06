@@ -24,9 +24,4 @@
         </nav>
     </div>
 
-    <div style="text-align: center;padddng:15px;">
-        <br>
-        Sistem Kepegawaian Kontrak <br> Kab. Labuhanbatu Utara
-    </div>
-
 </aside>

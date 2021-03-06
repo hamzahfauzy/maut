@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'MAUT LABURA',
+    'title' => 'Sistem Kepegawaian Kontrak',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'logo' => '<b>MAUT</b> LABURA',
+    'logo' => '<b>Sistem Kepegawaian</b> Kontrak',
     'logo_img' => 'logo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,

@@ -30,7 +30,7 @@ class HomeController extends Controller
         $kriteria = Criteria::count();
         $subkriteria = Subcriteria::count();
         $alternatif = Alternatif::count();
-        $penilaian = Valuation::count()/$alternatif;
+        $penilaian = $alternatif > 0 ? Valuation::count()/$alternatif : 0;
         return view('home',compact('kriteria','subkriteria','alternatif','penilaian'));
     }
 }
