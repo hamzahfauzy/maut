@@ -11,6 +11,14 @@ use Illuminate\Http\Request;
  */
 class AlternatifController extends Controller
 {
+    public $list_jabatan = [
+        'Supir' => 'Supir',
+        'Tenaga Teknis' => 'Tenaga Teknis',
+        'Operator Keuangan' => 'Operator Keuangan',
+        'Petugas Kebersihan' => 'Petugas Kebersihan',
+        'Penjaga Malam' => 'Penjaga Malam',
+        'Staff' => 'Staff',
+    ];
     /**
      * Display a listing of the resource.
      *
@@ -40,7 +48,8 @@ class AlternatifController extends Controller
     public function create()
     {
         $alternatif = new Alternatif();
-        return view('alternatif.create', compact('alternatif'));
+        $list_jabatan = $this->list_jabatan;
+        return view('alternatif.create', compact('alternatif','list_jabatan'));
     }
 
     /**
@@ -81,8 +90,8 @@ class AlternatifController extends Controller
     public function edit($id)
     {
         $alternatif = Alternatif::find($id);
-
-        return view('alternatif.edit', compact('alternatif'));
+        $list_jabatan = $this->list_jabatan;
+        return view('alternatif.edit', compact('alternatif','list_jabatan'));
     }
 
     /**

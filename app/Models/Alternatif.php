@@ -29,6 +29,11 @@ class Alternatif extends Model
     
     static $rules = [
 		'name' => 'required',
+		'NIK' => 'required',
+		'jenis_kelamin' => 'required',
+		'unit_kerja' => 'required',
+		'tempat_lahir' => 'required',
+		'tanggal_lahir' => 'required',
     ];
 
     protected $perPage = 20;
@@ -40,7 +45,7 @@ class Alternatif extends Model
      *
      * @var array
      */
-    protected $fillable = ['name','NIK','tempat_lahir','tanggal_lahir','pendidikan_terakhir','no_sk_pertama','tanggal_sk_pertama','no_sk_terakhir','tanggal_sk_terakhir','jenis_jabatan','alamat'];
+    protected $fillable = ['name','NIK','jenis_kelamin','unit_kerja','tempat_lahir','tanggal_lahir','pendidikan_terakhir','no_sk_pertama','tanggal_sk_pertama','no_sk_terakhir','tanggal_sk_terakhir','jenis_jabatan','alamat'];
 
 
     /**

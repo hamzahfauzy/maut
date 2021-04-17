@@ -12,6 +12,16 @@
             {!! $errors->first('NIK', '<div class="invalid-feedback">:message</p>') !!}
         </div>
         <div class="form-group">
+            {{ Form::label('unit_kerja') }}
+            {{ Form::text('unit_kerja', $alternatif->unit_kerja, ['class' => 'form-control' . ($errors->has('unit_kerja') ? ' is-invalid' : ''), 'placeholder' => 'Unit Kerja']) }}
+            {!! $errors->first('unit_kerja', '<div class="invalid-feedback">:message</p>') !!}
+        </div>
+        <div class="form-group">
+            {{ Form::label('jenis_kelamin') }}
+            {{ Form::select('jenis_kelamin', ['Laki-laki'=>'Laki-laki','Perempuan'=>'Perempuan'], $alternatif->jenis_kelamin, ['class' => 'form-control' . ($errors->has('jenis_kelamin') ? ' is-invalid' : ''), 'placeholder' => '- Jenis Kelamin -']) }}
+            {!! $errors->first('jenis_kelamin', '<div class="invalid-feedback">:message</p>') !!}
+        </div>
+        <div class="form-group">
             {{ Form::label('tempat_lahir') }}
             {{ Form::text('tempat_lahir', $alternatif->tempat_lahir, ['class' => 'form-control' . ($errors->has('tempat_lahir') ? ' is-invalid' : ''), 'placeholder' => 'Tempat Lahir']) }}
             {!! $errors->first('tempat_lahir', '<div class="invalid-feedback">:message</p>') !!}
@@ -48,7 +58,7 @@
         </div>
         <div class="form-group">
             {{ Form::label('jenis_jabatan') }}
-            {{ Form::text('jenis_jabatan', $alternatif->jenis_jabatan, ['class' => 'form-control' . ($errors->has('jenis_jabatan') ? ' is-invalid' : ''), 'placeholder' => 'Jenis Jabatan']) }}
+            {{ Form::select('jenis_jabatan', $list_jabatan, $alternatif->jenis_jabatan, ['class' => 'form-control' . ($errors->has('jenis_jabatan') ? ' is-invalid' : ''), 'placeholder' => 'Jenis Jabatan']) }}
             {!! $errors->first('jenis_jabatan', '<div class="invalid-feedback">:message</p>') !!}
         </div>
         <div class="form-group">

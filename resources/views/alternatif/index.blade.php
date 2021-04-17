@@ -40,9 +40,14 @@
                                         
 										<th>Nama</th>
 										<th>Nik</th>
+										<th>Jenis Kelamin</th>
+										<th>Unit Kerja</th>
 										<th>Tempat Lahir</th>
 										<th>Tanggal Lahir</th>
 										<th>Pendidikan Terakhir</th>
+										<th>SK Pertama</th>
+										<th>SK Terakhir</th>
+										<th>Jenis Jabatan</th>
 										<th>Alamat</th>
 
                                         <th></th>
@@ -55,9 +60,14 @@
                                             
 											<td>{{ $alternatif->name }}</td>
 											<td>{{ $alternatif->NIK }}</td>
+											<td>{{ $alternatif->jenis_kelamin }}</td>
+											<td>{{ $alternatif->unit_kerja }}</td>
 											<td>{{ $alternatif->tempat_lahir }}</td>
 											<td>{{ $alternatif->tanggal_lahir }}</td>
 											<td>{{ $alternatif->pendidikan_terakhir }}</td>
+											<td>{{ $alternatif->no_sk_pertama }}<br>{{$alternatif->tanggal_sk_pertama}}</td>
+											<td>{{ $alternatif->no_sk_terakhir }}<br>{{$alternatif->tanggal_sk_terakhir}}</td>
+											<td>{{ $alternatif->jenis_jabatan }}</td>
 											<td>{{ $alternatif->alamat }}</td>
 
                                             <td>
